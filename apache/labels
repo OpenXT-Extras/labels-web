@@ -1,0 +1,14 @@
+<VirtualHost 10.80.248.186:80>
+    ServerAdmin webmaster@localhost
+
+    DocumentRoot @LABELS_DIR@/www
+
+    <Directory "@LABELS_DIR@/www/">
+        AllowOverride None
+        AddHandler cgi-script .cgi
+        Options ExecCGI
+        Order allow,deny
+        Allow from all
+        DirectoryIndex labels.cgi
+    </Directory>
+</VirtualHost>
